@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Generator</title>
+</head>
+<body>
+    <button>CLick Me</button>
+    <script>
+        const body = document.body;
+        const colorGen = setInterval(()=>{
+            var red = Math.floor(Math.random()*126);
+            var green = Math.floor(Math.random()*126);
+            var blue = Math.floor(Math.random()*126);
+            body.style.backgroundColor  = `rgb(${red},${green},${blue})`;
+        },1000)
+
+        const btn = document.querySelector("button")
+        btn.addEventListener("click", ()=>{
+            clearInterval(colorGen);
+            btn.innerText = body.style.backgroundColor
+        })
+    </script>
+</body>
+</html>
