@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { PrimeRentalsComponent } from './prime-rentals/prime-rentals.component';
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, PrimeRentalsComponent],
+  imports: [RouterOutlet, PrimeRentalsComponent,RouterModule],
   template: `
     <div>
-      <app-prime-rentals></app-prime-rentals>
+       <router-outlet></router-outlet>
     </div>
     `,
   styleUrl: './app.component.css'
