@@ -12,8 +12,24 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 })
 export class PrimeRentalsComponent {
   carList: RentCarsInterface[] = []
+  filteredList: RentCarsInterface[] = []
   rentingService: RentingService = inject(RentingService)
-  constructor(){
-    this.carList = this.rentingService.getAllRentedCars() ;
+  constructor() {
+    this.rentingService.getAllRentedCars().then((carList: RentCarsInterface[]| undefined) => {
+      this.carList = carList?? [];
+      this.filteredList = carList ?? []
+    });
+  }
+
+  searchCar(text: string){
+    if(!text){
+      this.filteredList = this.carList
+      return 
+    }
+    else {
+      this.filteredList = this.carList.filter(car=>{
+        return car?.modelName.toLowerCase().includes(text.toLowerCase())
+      })
+    }
   }
 }

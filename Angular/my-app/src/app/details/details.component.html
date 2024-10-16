@@ -9,4 +9,15 @@
     <li>{{carDetails?.condition}}</li>
 </ul>
 
+<h3>Are you Interested?</h3>
+<form [formGroup]="rentedCar" (submit)="submitApplication()">
+    <label for="buyerName">Name: </label>
+    <input id="buyerName" type="text" formControlName="buyerName">
+    <label for="buyerLoc">Location: </label>
+    <input id="buyerLoc" type="text" formControlName="buyerLoc">
+    <label for="buyerContact">Contact: </label>
+    <input id="buyerContact" type="text" formControlName="buyerContact">
+    <button type="button" class="primary">Apply now</button>
+</form>
+
 <a [routerLink]="['/']">Home</a>

@@ -2,12 +2,12 @@
 <h4>A place to buy brand new second-hand cars...</h4>
 
 <form action="">
-    <input type="text" placeholder="Enter car name">
-    <button>Search</button>
+    <input type="text" placeholder="Enter car name" #filter>
+    <button type="button" (click)="searchCar(filter.value)">Search</button>
 </form>
 
 <div class="container">
-    <div *ngFor="let car of carList" class="tab">
+    <div *ngFor="let car of filteredList" class="tab">
     <img [src]= "car.imgName" alt="hehe"> 
     <p>Model Name: {{car.modelName}}</p>
     <p>Year: {{car.year}}</p>
