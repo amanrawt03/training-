@@ -1,5 +1,5 @@
 <h1>Welcome to Prime Rentals!!</h1>
-<h4>A place to buy brand new second-hand cars...</h4>
+<h4>RIDE IN STYLE</h4>
 
 <form action="">
     <input type="text" placeholder="Enter car name" #filter>
@@ -11,7 +11,7 @@
     <img [src]= "car.imgName" alt="hehe"> 
     <p>Model Name: {{car.modelName}}</p>
     <p>Year: {{car.year}}</p>
-    <p>Price: {{car.price}}</p>
+    <p>Rate Per Day: ₹{{car.ratePerDay}}</p>
     <a [routerLink]="['/details', car.id]">Learn More</a>
     </div>
     

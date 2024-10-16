@@ -1,11 +1,20 @@
 import { Injectable } from '@angular/core';
 import { RentCarsInterface } from './rent-cars-interface';
+import { FormData } from './form-data';
+import { Form } from '@angular/forms';
 @Injectable({
   providedIn: 'root'
 })
+
 export class RentingService {
   url = "http://localhost:3000/rentalDB"
-
+  formData: FormData = {
+    buyerName: "",
+    buyerContact: 0,
+    noOfDays: 0,
+    modelName: "",
+    ratePerDay: 0
+  }
 async getAllRentedCars(): Promise<RentCarsInterface[] | undefined>{
   let res = await fetch(this.url);
   return await res.json() ?? []
@@ -16,8 +25,15 @@ async getCarsByID(id:number): Promise<RentCarsInterface | undefined>{
   return await res.json() ?? {}
 }
 
-rentCar(buyerName:string, buyerContact: string, buyerLoc: string){
-  console.log(`${buyerName}--${buyerContact}--${buyerLoc}`);
+rentCar(buyerName:string, buyerContact: string, noOfDays: string, modelName: string, ratePerDay: number){
+  console.log(`${buyerName}--${buyerContact}--${noOfDays}--${modelName}`);
+  this.formData = {
+    buyerName, buyerContact: parseInt(buyerContact), noOfDays: parseInt(noOfDays), modelName, ratePerDay
+  }
+}
+
+getFormData(){
+  return this.formData
 }
 }
 

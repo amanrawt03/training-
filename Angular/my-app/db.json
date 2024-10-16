@@ -1,93 +1,112 @@
 {
-    "rentalDB": [{
+  "rentalDB": [
+    {
       "id": 1,
       "imgName": "https://plus.unsplash.com/premium_photo-1683134242640-fe6baaf4d5fc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D",
       "modelName": "Bugati",
-      "year": 2003,
-      "price": 200000,
-      "color": "red",
+      "year": 2005,
+      "ratePerDay": 2500,
+      "color": "silver",
       "ownerName": "Vikas",
       "ownerContact": 9099988827,
-      "condition": "V.Good"
-    }, {
+      "condition": "Excellent",
+      "transmission": "Automatic"
+    },
+    {
       "id": 2,
       "imgName": "https://images.unsplash.com/photo-1727873817701-8cd132afbb01?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "modelName": "Ferrari",
-      "year": 2001,
-      "price": 20000000,
-      "color": "black",
+      "year": 2007,
+      "ratePerDay": 3000,
+      "color": "yellow",
       "ownerName": "Ram",
       "ownerContact": 9099988827,
-      "condition": "Poor"
-    }, {
+      "condition": "Poor",
+      "transmission": "Manual"
+    },
+    {
       "id": 3,
       "imgName": "https://plus.unsplash.com/premium_photo-1683134242640-fe6baaf4d5fc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D",
       "modelName": "Lambo",
       "year": 2023,
-      "price": 30000000,
-      "color": "red",
+      "ratePerDay": 3500,
+      "color": "orange",
       "ownerName": "Shivam",
       "ownerContact": 9099988827,
-      "condition": "Good"
-    }, {
+      "condition": "Good",
+      "transmission": "Semi-Automatic"
+    },
+    {
       "id": 4,
       "imgName": "https://plus.unsplash.com/premium_photo-1683134242640-fe6baaf4d5fc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D",
       "modelName": "Thar",
-      "year": 1990,
-      "price": 200000,
-      "color": "blue",
+      "year": 1995,
+      "ratePerDay": 180,
+      "color": "green",
       "ownerName": "Raju",
       "ownerContact": 9099988827,
-      "condition": "Not bad"
-    }, {
+      "condition": "Not bad",
+      "transmission": "Manual"
+    },
+    {
       "id": 5,
       "imgName": "https://plus.unsplash.com/premium_photo-1683134242640-fe6baaf4d5fc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D",
       "modelName": "Gypsy",
-      "year": 1908,
-      "price": 200000,
-      "color": "red",
+      "year": 1910,
+      "ratePerDay": 150,
+      "color": "purple",
       "ownerName": "Romil",
       "ownerContact": 9099988827,
-      "condition": "Excellent"
-    }, {
+      "condition": "Excellent",
+      "transmission": "Automatic"
+    },
+    {
       "id": 6,
-      "imgName": "https://plus.unsplash.com/premium_photo-1683134242640-fe6baaf4d5fc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D",
+      "imgName": "https://plus.unsplash.com/premium_photo-1683134242640-fe6baaf4d5fc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1 yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D",
       "modelName": "Swift",
-      "year": 2003,
-      "price": 200000,
-      "color": "red",
+      "year": 2009,
+      "ratePerDay": 2200,
+      "color": "white",
       "ownerName": "Aman",
       "ownerContact": 9099988827,
-      "condition": "Good"
-      }, {
-        "id": 7,
-        "imgName": "https://plus.unsplash.com/premium_photo-1683134240084-ba074973f75e?q=80&w=1595&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "modelName": "Covette",
-        "year": 2003,
-        "price": 200000,
-        "color": "black",
-        "ownerName": "Karan Johar",
-        "ownerContact": 9099988827,
-        "condition": "Poor"
-      }, {
-        "id": 8,
-        "imgName": "https://plus.unsplash.com/premium_photo-1683134242640-fe6baaf4d5fc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D",
-        "modelName": "Bugati",
-        "year": 2003,
-        "price": 200000,
-        "color": "red",
-        "ownerName": "Khushal",
-        "ownerContact": 9099988827,
-        "condition": "Good"
-      }, {
-        "id": 9,
-        "imgName": "https://plus.unsplash.com/premium_photo-1683134240084-ba074973f75e?q=80&w=1595&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "modelName": "Red Bull",
-        "year": 2003,
-        "price": 200000,
-        "color": "blue",
-        "ownerName": "Karishma",
-        "ownerContact": 9099988827,
-        "condition": "Good"
-      }]
+      "condition": "Good",
+      "transmission": "Semi-Automatic"
+    },
+    {
+      "id": 7,
+      "imgName": "https://plus.unsplash.com/premium_photo-1683134240084-ba074973f75e?q=80&w=1595&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "modelName": "Covette",
+      "year": 2010,
+      "ratePerDay": 2800,
+      "color": "black",
+      "ownerName": "Karan Johar",
+      "ownerContact": 9099988827,
+      "condition": "Poor",
+      "transmission": "Manual"
+    },
+    {
+      "id": 8,
+      "imgName": "https://plus.unsplash.com/premium_photo-1683134242640-fe6baaf4d5fc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D",
+      "modelName": "Bugati",
+      "year": 2012,
+      "ratePerDay": 300,
+      "color": "red",
+      "ownerName": "Khushal",
+      "ownerContact": 9099988827,
+      "condition": "Good",
+      "transmission": "Automatic"
+    },
+    {
+      "id": 9,
+      "imgName": "https://plus.unsplash.com/premium_photo-1683134240084-ba074973f75e?q=80&w=1595&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "modelName": "Red Bull",
+      "year": 2015,
+      "ratePerDay": 320,
+      "color": "blue",
+      "ownerName": "Karishma",
+      "ownerContact": 9099988827,
+      "condition": "Good",
+      "transmission": "Semi-Automatic"
     }
+  ]
+}

@@ -1,0 +1,71 @@
+<div class="receipt-container">
+
+    <div class="receipt-header">
+
+        <h2>Car Rental Receipt</h2>
+
+        <p>Date: {{date.getDate()}}/{{date.getMonth()}}/{{date.getFullYear()}}</p>
+
+    </div>
+
+    <div class="receipt-details">
+
+        <h3>Rental Details</h3>
+
+        <table class="receipt-table">
+            
+            <tr>
+
+                <th>Customer Name</th>
+
+                <td>{{data.buyerName}}</td>
+
+            </tr>
+            <tr>
+
+                <th>Contact Number</th>
+
+                <td>{{data.buyerContact}}</td>
+
+            </tr>
+            <tr>
+
+                <th>Car Model</th>
+
+                <td>{{data.modelName}}</td>
+
+            </tr>
+
+            <tr>
+
+                <th>Days Rented</th>
+
+                <td>{{data.noOfDays}} days</td>
+
+            </tr>
+
+            <tr>
+
+                <th>Rate per Day</th>
+
+                <td>₹{{data.ratePerDay}}.00</td>
+
+            </tr>
+
+            <tr>
+
+                <th>Total Rental</th>
+
+                <td>₹{{data.ratePerDay*data.noOfDays}}.00</td>
+
+            </tr>
+
+        </table>
+
+        <h3>Total Amount Due</h3>
+
+        <p>₹{{data.ratePerDay*data.noOfDays}}.00</p>
+
+    </div>
+
+</div>

@@ -4,6 +4,7 @@ import { RentCarsInterface } from '../rent-cars-interface';
 import { ActivatedRoute } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-details',
   standalone: true,
@@ -15,26 +16,34 @@ export class DetailsComponent {
   route: ActivatedRoute = inject(ActivatedRoute)
   rentingService: RentingService = inject(RentingService)
   carDetails: RentCarsInterface | undefined
+
+
   rentedCar = new FormGroup({
     buyerName:new FormControl(''),
-    buyerLoc:new FormControl(''),
-    buyerContact :new FormControl('')
+    buyerContact :new FormControl(''),
+    noOfDays :new FormControl('')
   })
 
-  constructor(){
+  constructor(private router:Router){
     const RentedCarId = parseInt(this.route.snapshot.params['id'])
     this.rentingService.getCarsByID(RentedCarId).then(carDetails=>{
       this.carDetails = carDetails;
     })
   }
 
-
   submitApplication(){
-    this.rentingService.rentCar(
+    if(this.rentedCar.valid)
+    {this.rentingService.rentCar(
       this.rentedCar.value.buyerName ?? ' ',
       this.rentedCar.value.buyerContact?? '',
-      this.rentedCar.value.buyerLoc ?? ''
+      this.rentedCar.value.noOfDays ?? '',
+      this.carDetails?.modelName ?? '',
+      this.carDetails?.ratePerDay ?? 0
     );
+    this.router.navigate(['/receipt'])}
+    else{
+      alert('Please fill in all required fields');
+    }
   }
   
 }

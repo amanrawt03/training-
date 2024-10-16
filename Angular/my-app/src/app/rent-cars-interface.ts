@@ -3,7 +3,7 @@ export interface RentCarsInterface {
     imgName: string
     modelName: string
     year: number
-    price: number
+    ratePerDay: number
     color: string
     ownerName:string
     ownerContact: number

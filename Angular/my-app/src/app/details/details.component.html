@@ -2,7 +2,7 @@
 <div></div>
 <ul>
     <li>{{carDetails?.year}}</li>
-    <li>{{carDetails?.price}}</li>
+    <li>{{carDetails?.ratePerDay}}</li>
     <li>{{carDetails?.color}}</li>
     <li>{{carDetails?.ownerName}}</li>
     <li>{{carDetails?.ownerContact}}</li>
@@ -12,12 +12,15 @@
 <h3>Are you Interested?</h3>
 <form [formGroup]="rentedCar" (submit)="submitApplication()">
     <label for="buyerName">Name: </label>
-    <input id="buyerName" type="text" formControlName="buyerName">
-    <label for="buyerLoc">Location: </label>
-    <input id="buyerLoc" type="text" formControlName="buyerLoc">
+    <input id="buyerName" type="text" formControlName="buyerName" required>
+
+    <label for="noOfDays">No of days: </label>
+    <input id="noOfDays" type="text" formControlName="noOfDays" required>
+
     <label for="buyerContact">Contact: </label>
-    <input id="buyerContact" type="text" formControlName="buyerContact">
-    <button type="button" class="primary">Apply now</button>
+    <input id="buyerContact" type="text" formControlName="buyerContact" required>
+    
+    <button type="submit" class="primary">Apply now</button>
 </form>
 
 <a [routerLink]="['/']">Home</a>
