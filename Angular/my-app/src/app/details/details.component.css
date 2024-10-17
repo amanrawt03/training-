@@ -1,0 +1,37 @@
+* {
+  box-sizing: content-box;
+}
+.main {
+  min-height: 100vh;
+  min-width: 100vw;
+  position: absolute;
+  top: 0;
+  background-color: rgba(229, 228, 228, 0.707);
+}
+img {
+  width: 250px;
+  height: 170px;
+}
+.info-h {
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 260px;
+  width: 500px;
+  justify-content: space-between;
+  align-items: center;
+}
+ul {
+  background-color: rgb(81, 76, 76);
+}
+.m-text {
+  color: rgb(60, 55, 55);
+  font-style: italic;
+}
+.car {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  color: rgb(23, 22, 22);
+}
+.car-name {
+  color: rgb(175, 30, 30);
+}

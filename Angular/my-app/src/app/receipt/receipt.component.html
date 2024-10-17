@@ -1,16 +1,12 @@
-<div class="receipt-container">
-
-    <div class="receipt-header">
-
+<div class="main">
+    <div class="receipt-header d-flex justify-content-between">
         <h2>Car Rental Receipt</h2>
-
-        <p>Date: {{date.getDate()}}/{{date.getMonth()}}/{{date.getFullYear()}}</p>
-
+        <p class="me-3">Date: {{date.getDate()}}/{{date.getMonth()}}/{{date.getFullYear()}}</p>
     </div>
 
     <div class="receipt-details">
 
-        <h3>Rental Details</h3>
+        <h4 class="mt-3">Rental Details</h4>
 
         <table class="receipt-table">
             
@@ -62,7 +58,7 @@
 
         </table>
 
-        <h3>Total Amount Due</h3>
+        <h4 class="mt-4">Total Amount Due</h4>
 
         <p>₹{{data.ratePerDay*data.noOfDays}}.00</p>
 
