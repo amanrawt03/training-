@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { RentCarsInterface } from './rent-cars-interface';
 import { FormData } from './form-data';
-import { Form } from '@angular/forms';
 @Injectable({
   providedIn: 'root'
 })
 
 export class RentingService {
-  url = "http://localhost:3000/rentalDB"
+  // url = "http://localhost:3000/rentalDB"
+  url = "https://demo1637658.mockable.io/rentalDB"
   formData: FormData = {
     buyerName: "",
     buyerContact: 0,
