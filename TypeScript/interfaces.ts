@@ -20,4 +20,7 @@ interface car extends vehicle{
  }
 
  
+// classes access interfaces using implements , they define the values of the props in the interface
+
+// Interfaces can never have implementations but an abstract class can .
 export default car

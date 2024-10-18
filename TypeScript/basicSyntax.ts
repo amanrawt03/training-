@@ -15,6 +15,10 @@ let g: number = 0b111001; // Binary
 
 let h: number = 0o436; // Octal
 
+// use symbols to create unique props of objects 
+
+
+
 // User-defined:
 // classes, arrays, tuples, interfaces
 
@@ -37,3 +41,35 @@ console.log(enumenu[0]);
 // string
 let person: any = "989989";
 console.log(typeof person);
+
+// Readonly : cannot be reinstanstiated, its different from const as it is not for variables but for members of classes 
+// readonly name :string; // compile time
+
+interface obj{
+  readonly name: string,
+  age:number
+}
+
+let obj1:obj = {
+  name: "aman",
+  age: 9
+}
+
+// union types: can use any of the types for the same variable at a time 
+let value: string | number = "Foo";
+value = 10;  // Okay
+
+// intersection types: assigns 2 or more types for the same variable at a time using &
+interface Employee {
+  work: () => string;
+  }
+interface Manager {
+  manage: () => string;
+  }
+  
+type Supervisor = Employee & Manager;
+  
+  // john can both work and manage
+  let john: Supervisor;
+  
+  
