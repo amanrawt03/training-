@@ -1,3 +1,4 @@
+
 // function solve(a: number,b:number, c?:string){
 //     return a+b+(c|| "c nahi dia");
 // }
@@ -23,3 +24,4 @@ sum(2,3,1,1,1,1)
 //   let ans = multiply(2,3)
 //   console.log(ans);
   
+

@@ -1,28 +1,24 @@
+// Aliases in ts are used to assign custom names to data types , to make program more readable
+
+//  type keyword is used for aliases 
 type CarWheel = number
 type CarModel = string 
 type CarNo = number
 
-// type Car ={
-//     wheels : CarWheel,
-//     modelName : CarModel,
-//     numPlate: CarNo
-// }
+let carWheel:CarWheel = 4
+let carModel:CarModel = "Hyundai"
+let carNo:CarNo = 4812300;
 
-// let carWheel:CarWheel = 4
-// let carModel:CarModel = "Hyundai"
-// let carNo:CarNo = 4812300;
-// let car:Car = {
-//     wheels: carWheel,
-//     modelName: carModel,
-//     numPlate: carNo
-// }
-
-// console.log(car);
-
-let a:CarWheel = 100
-console.log(a);
-
-const wheel:Car={
-    wheels :10,
-    modelName: "nano"
+// for objects 
+type Animal = {
+    typeOfAnimal: string,
+    noOfLegs: number,
+    color: string
 }
+let dog:Animal = {
+    typeOfAnimal: "mammal",
+    noOfLegs: 4,
+    color: "black"
+}
+
+console.log(typeof dog);

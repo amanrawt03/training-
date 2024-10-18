@@ -1,14 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // Error:: Car interface donot have enginetype
-//  const car:Car = {
-//     // wheels :4,
-//     // modelName: "nano",
-// engineType :"Semi-Automatic"
-//  }
-var car = {
+var pulsar = {
+    wheels: 2,
+    color: "red",
+    // engineType :"Semi-Automatic"
+};
+var bmw = {
     wheels: 4,
-    modelName: "nano",
+    color: "black",
     engineType: "Semi-Automatic"
 };
-console.log(car);
-//  console.log(car.numPlate);
-//  console.log(typeof(car));

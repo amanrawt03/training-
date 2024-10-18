@@ -1,26 +1,23 @@
-interface Car{
+interface vehicle{
     wheels :number,
-    modelName: string
+    color: string
 }
-interface TeslaCar extends Car{
+interface car extends vehicle{
     engineType: string
 }
 
 // Error:: Car interface donot have enginetype
-//  const car:Car = {
-//     // wheels :4,
-//     // modelName: "nano",
+ const pulsar:vehicle = {
+    wheels :2,
+    color: "red",
     // engineType :"Semi-Automatic"
+ }
 
-//  }
-
- const car:TeslaCar = {
+ const bmw:car = {
     wheels :4,
-    modelName: "nano",
+    color: "black",
     engineType :"Semi-Automatic"
  }
- console.log(car);
+
  
-//  console.log(car.numPlate);
-//  console.log(typeof(car));
- 
+export default car
