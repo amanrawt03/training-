@@ -1,0 +1,9 @@
+<p>Reactive Form</p>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <label for="name">Username: </label>
+    <input type="text" id="name" formControlName="name" required>
+    <div *ngIf="myForm.get('name')?.invalid && myForm.get('name')?.touched">
+        Name is required
+    </div>
+    <button type="submit">Submit</button>
+</form>

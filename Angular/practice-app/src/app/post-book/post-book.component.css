@@ -1,0 +1,6 @@
+.container{
+    display: flex;
+}
+.posts{
+    width: 50vw;
+}

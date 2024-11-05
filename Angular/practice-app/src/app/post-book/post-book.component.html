@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>{{data}}</h1>
+  <button (click)="byeFunc()" ></button>
+  <div class="posts">
+    <h1>My Posts</h1>
+    <div *ngFor="let post of myPosts">
+      <h3>Title: {{ post.title }}</h3>
+      <p>Content:{{ post.body }}</p>
+    </div>
+  </div>
+  <div class="products">
+    <h1>My Products</h1>
+    <div *ngFor="let product of myProducts">
+      <h3>Title: {{ product.title }}</h3>
+      <p>Content:{{ product.price }}</p>
+    </div>
+  </div>
+</div>

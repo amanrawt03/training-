@@ -1,0 +1,11 @@
+<!-- <app-post-book [data] = "kuchBhi" (dataChange) = "handleDataChange($event)"></app-post-book>
+ {{name}}
+
+ <div [formGroup]="myForm">
+    <input type="text" formControlName="name" (keyup)="onChange()">
+ </div>
+ <button #myBtn (click)="onClick()">Submit</button>
+<app-post-book></app-post-book> -->
+<app-notification></app-notification>
+<input type="text" [(ngModel)] = "currentData">
+<button type="submit" (click)="onSubmit()">Submit</button>

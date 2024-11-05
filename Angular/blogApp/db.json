@@ -1,0 +1,17 @@
+{
+    "profiles":[
+        {
+            "email": "pasha919@gmail.com",
+            "password": "123456"
+        },{
+            "email": "prisha0909@gmail.com",
+            "password": "098"
+        },{
+            "email": "kusum1012@gmail.com",
+            "password": "qwerty"
+        },{
+            "email": "aman3021@gmail.com",
+            "password": "aman123"
+        }
+    ]
+}

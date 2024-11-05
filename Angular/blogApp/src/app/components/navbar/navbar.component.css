@@ -1,0 +1,19 @@
+.nav-st{
+    height: 90px;
+    width: 100vw;
+    background-color: rgb(32, 27, 27);
+    color: whitesmoke;
+}
+button{
+    background-color: blueviolet;
+    color: white;
+    border: 0;
+    border-radius: 25px;
+    width: 120px;
+    height: 35px;
+}
+.navbar-brand{
+    font-size: 28px;
+    color: white;
+    font-weight: 500;
+}

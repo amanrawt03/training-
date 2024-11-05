@@ -1,0 +1,82 @@
+<div class="main container">
+    <app-navbar></app-navbar>
+    <div class="text-center mt-4">
+      <div class="d-flex justify-content-between m-3 font-monospace">
+        <p>{{ today | date: 'yyyy-MM-dd' }}</p>
+      <p>{{ today | date: 'h:mm a' }}</p>
+      </div>
+      
+      <button
+        class="btn mx-2 bt-fn"
+        [ngClass]="{
+          'active': activ === 'myblogs',
+          'inactive': activ !== 'myblogs'
+        }"
+        (click)="getMyBlogs()"
+        appBtnEnlarge
+      >
+        My Blogs
+      </button>
+      <button
+        class="btn mx-2 bt-fn"
+        [ngClass]="{
+          'active': activ === 'allblogs',
+          'inactive': activ !== 'allblogs'
+        }"
+        (click)="getAllBlogs()"
+        appBtnEnlarge
+      >
+        All Blogs
+      </button>
+      <button appBtnEnlarge class="btn btn-success mx-2 bt-fn add-btn" routerLink="/addBlog">Add Blog</button>
+    </div>
+  
+    <div class="form-group mt-4 text-center">
+      <input
+        type="text"
+        class="form-control mx-auto"
+        style="max-width: 400px;" 
+        #searchInput
+        (input)="searchBlog(searchInput.value)"
+        placeholder="Search blogs"
+      />
+    </div>
+  
+    <div class="mt-5  w-50 list">
+      <ul class="list-group">
+        <li *ngIf="filteredBlogs.length === 0" class="list-group-item">
+          <strong>You have no blogs yet. Till then check out other blogs👋</strong>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let blog of filteredBlogs">
+          <span>{{ blog.title | titleCase | truncateText}}</span>
+          <div>
+            <div class="d-flex"> 
+              <p class="fst-italic m-2" *ngIf="activ === 'allblogs'">{{blog.username}}</p>
+            <button appBtnEnlarge class="btn btn-primary btn-sm me-2" [routerLink]="['/readBlog', blog._id]">
+              Read
+            </button>
+            <button
+              class="btn btn-primary btn-sm me-2"
+              *ngIf="activ === 'myblogs'"
+              [routerLink]="['/editBlog', blog._id]"
+              appBtnEnlarge
+            >
+              Edit
+            </button>
+            <button
+              class="btn btn-danger btn-sm"
+              *ngIf="activ === 'myblogs'"
+              (click)="deleteBlog(blog._id)"
+              appBtnEnlarge
+            >
+              Delete
+            </button>
+            </div>
+            
+            
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  

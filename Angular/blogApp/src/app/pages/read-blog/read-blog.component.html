@@ -1,0 +1,15 @@
+<div *ngIf="blog; else loading">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2 class="text-primary">{{ blog.title }}</h2>
+      <button class="btn btn-outline-secondary" (click)="goBack()">Go back</button>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <div class="blog-content" [innerHTML]="blog.content"></div>
+      </div>
+    </div>
+  </div>
+  <ng-template #loading>
+    <p>Loading...</p>
+  </ng-template>
+  

@@ -2,7 +2,9 @@ import { Routes } from '@angular/router';
 import { PrimeRentalsComponent } from './prime-rentals/prime-rentals.component';
 import { DetailsComponent } from './details/details.component';
 import { ReceiptComponent } from './receipt/receipt.component';
-export const routes: Routes = [
+import { QueryComponent } from './query/query.component';
+export const
+ routes: Routes = [
     {
         path: '',
         component: PrimeRentalsComponent,
@@ -17,5 +19,10 @@ export const routes: Routes = [
         path: 'receipt',
         component: ReceiptComponent,
         title: 'Receipt'
+    },
+    {
+        path: 'query',
+        component: QueryComponent,
+        title: 'Query'
     }
 ];

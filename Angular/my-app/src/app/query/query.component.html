@@ -1,0 +1,15 @@
+<form [formGroup]="surveyForm" (ngSubmit)="onSubmit()">
+    <div formArrayName="questions">
+      <div *ngFor="let question of questions.controls; let i = index" [formGroupName]="i">
+        <input formControlName="questionText" placeholder="Enter your question" />
+        <select formControlName="questionType">
+          <option value="text">Text</option>
+          <option value="multiple-choice">Multiple Choice</option>
+        </select>
+        <button type="button" (click)="removeQuestion(i)">Remove Question</button>
+      </div>
+    </div>
+    <button type="button" (click)="addQuestion()">Add Question</button>
+    <button type="submit">Submit Survey</button>
+  </form>
+  

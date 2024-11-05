@@ -1,0 +1,112 @@
+<h1>Template Driven Form</h1>
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+  <label for="firstName">First Name: </label>
+  <input
+    name="firstName"
+    ngModel
+    id="firstName"
+    required
+    pattern="[a-zA-Z]{3,}"
+  />
+  <div
+    *ngIf="
+      myForm.controls['firstName']?.invalid &&
+      (myForm.controls['firstName']?.touched ||
+        myForm.controls['firstName']?.dirty)
+    "
+  >
+    Enter at least 3 alphabetic characters
+  </div>
+
+  <label for="lastName">Last Name:</label>
+  <input name="lastName" ngModel id="lastName" pattern="[a-zA-Z]{3,}" />
+  <div
+    *ngIf="
+      myForm.controls['lastName']?.invalid &&
+      (myForm.controls['lastName']?.touched ||
+        myForm.controls['lastName']?.dirty)
+    "
+  >
+    Enter at least 3 alphabetic characters
+  </div>
+
+  <label for="email">Email:</label>
+  <input
+    name="email"
+    ngModel
+    required
+    id="email"
+    pattern="^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,}$"
+    email
+    required
+  />
+  <div
+    *ngIf="
+      myForm.controls['email']?.invalid &&
+      (myForm.controls['email']?.touched || myForm.controls['email']?.dirty)
+    "
+  >
+    Enter valid email address
+  </div>
+
+  <label for="pAddress">Permanent Address:</label>
+  <input
+    name="pAddress"
+    [(ngModel)]="permanentAddress"
+    required
+    id="pAddress"
+  />
+
+  <div class="currAddress">
+    <label for="cAddress">Current Address:</label>
+    <input
+      name="cAddress"
+      [(ngModel)]="currentAddress"
+      required
+      id="cAddress"
+    />
+    <button (click)="onClick()">same as permanent</button>
+  </div>
+
+  <label for="number">Contact Number: </label>
+  <input name="number" ngModel required id="number" pattern="^[1-9][0-9]{9}$" />
+  <div
+    *ngIf="
+      myForm.controls['number']?.invalid &&
+      (myForm.controls['number']?.touched || myForm.controls['number']?.dirty)
+    "
+  >
+    Invalid Phone Number
+  </div>
+
+  <label for="password">Password: </label>
+  <input
+    type="password"
+    name="password"
+    [(ngModel)] = "password"
+    required
+    id="password"
+    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{6,}$"
+  />
+  <div
+    *ngIf="
+      myForm.controls['password']?.invalid &&
+      (myForm.controls['password']?.touched || myForm.controls['password']?.dirty)
+    "
+  >
+    Invalid Password
+  </div>
+
+  <label for="cnfPassword">Confirm Password: </label>
+  <input type="password" name="cnfPassword" [(ngModel)] = "confirmPassword" required id="cnfPassword" />
+  <div
+    *ngIf="
+      confirmPassword != password &&
+      (myForm.controls['password']?.touched || myForm.controls['password']?.dirty)
+    "
+  >
+    Password not matching
+  </div>
+
+  <button type="submit">Submit</button>
+</form>

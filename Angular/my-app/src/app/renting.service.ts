@@ -6,8 +6,7 @@ import { FormData } from './form-data';
 })
 
 export class RentingService {
-  // url = "http://localhost:3000/rentalDB"
-  url = "https://demo1637658.mockable.io/rentalDB"
+  url = "http://localhost:3000/rentalDB"
   formData: FormData = {
     buyerName: "",
     buyerContact: 0,

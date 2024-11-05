@@ -1,0 +1,82 @@
+<div class="main">
+  <nav class="navbar nav-st">
+    <div class="container-fluid">
+      <p class="navbar-brand">Bloggle</p>
+      <button
+        class="btn btn-outline-success register"
+        routerLink="/signup"
+        type="submit"
+      >
+        Register
+      </button>
+    </div>
+  </nav>
+  <div class="body d-flex m-5 justify-content-around">
+    <img
+      src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt=""
+    />
+    <div class="form mt-4">
+      <h2>Login to Bloggle</h2>
+      <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            formControlName="email"
+            appHighlight
+          />
+          <div
+            *ngIf="
+              loginForm.get('email')?.invalid &&
+              (loginForm.get('email')?.touched || loginForm.get('email')?.dirty)
+            "
+          >
+            <small class="text-danger" *ngIf="loginForm.get('email')?.errors?.['required']"
+              >Email is required</small
+            >
+            <small class="text-danger" *ngIf="loginForm.get('email')?.errors?.['email']"
+              >Invalid email format</small
+            >
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            formControlName="password"
+            appHighlight
+          />
+          <div
+            *ngIf="
+              loginForm.get('password')?.invalid &&
+              (loginForm.get('password')?.touched ||
+                loginForm.get('password')?.dirty)
+            "
+          >
+            <small class="text-danger" *ngIf="loginForm.get('password')?.errors?.['required']"
+              >Password is required.</small
+            >
+            <small class="text-danger" *ngIf="loginForm.get('password')?.errors?.['minlength']"
+              >Password must be at least 8 characters long</small
+            >
+            <small class="text-danger"
+              *ngIf="loginForm.get('password')?.errors?.['invalidPassword']"
+              >Password must contain at least 1 uppercase, 1
+              lowercase, 1 special char, and 1 number </small
+            >
+          </div>
+        </div>
+        <button type="submit" class="login btn btn-primary">Login</button>
+      </form>
+      <p class="mt-3">
+        Don't have an account ?
+        <a routerLink="/signup"> click here to register</a>
+      </p>
+    </div>
+  </div>
+</div>
