@@ -51,25 +51,7 @@
             formControlName="password"
             appHighlight
           />
-          <div
-            *ngIf="
-              loginForm.get('password')?.invalid &&
-              (loginForm.get('password')?.touched ||
-                loginForm.get('password')?.dirty)
-            "
-          >
-            <small class="text-danger" *ngIf="loginForm.get('password')?.errors?.['required']"
-              >Password is required.</small
-            >
-            <small class="text-danger" *ngIf="loginForm.get('password')?.errors?.['minlength']"
-              >Password must be at least 8 characters long</small
-            >
-            <small class="text-danger"
-              *ngIf="loginForm.get('password')?.errors?.['invalidPassword']"
-              >Password must contain at least 1 uppercase, 1
-              lowercase, 1 special char, and 1 number </small
-            >
-          </div>
+          
         </div>
         <button type="submit" class="login btn btn-primary">Login</button>
       </form>
