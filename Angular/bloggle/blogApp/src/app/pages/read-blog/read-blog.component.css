@@ -1,0 +1,132 @@
+/* Container for the entire comment section */
+.commentContainer {
+    margin-top: 20px;
+  }
+  
+  /* Styling for the "Add a comment" button */
+  .commentContainer .btn-primary {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+  
+  /* Card styling for individual comments */
+  .allComments {
+    margin-top: 20px;
+  }
+  
+  .comment {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .comment .comment-author {
+    font-weight: bold;
+    font-size: 16px;
+    color: #007bff;
+  }
+  
+  .comment .comment-date {
+    font-size: 14px;
+    color: #6c757d;
+  }
+  
+  .comment .comment-text {
+    margin-top: 10px;
+    font-size: 15px;
+  }
+  
+  .comment .replyContainer {
+    margin-top: 10px;
+    padding-left: 20px;
+    border-left: 2px solid #007bff;
+  }
+  
+  .comment .replyContainer .comment-text {
+    font-style: italic;
+    color: #555;
+  }
+  
+  .comment .btn-outline-primary {
+    font-size: 14px;
+    padding: 6px 12px;
+    margin-top: 10px;
+  }
+  
+  .comment .btn-outline-primary:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* Modal Styles */
+  .modal-content {
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  .modal-header {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .modal-header .modal-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .modal-body {
+    padding-top: 15px;
+  }
+  
+  .modal-body .form-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .modal-body input,
+  .modal-body textarea {
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: 100%;
+    font-size: 14px;
+  }
+  
+  .modal-body input:focus,
+  .modal-body textarea:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  .modal-body button {
+    font-size: 14px;
+    padding: 10px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .modal-body button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .modal-body button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Modal Close Button */
+  .modal-header .btn-close {
+    font-size: 18px;
+    color: #000;
+  }
+  
+  .modal-header .btn-close:hover {
+    color: #007bff;
+  }
+  

@@ -1,0 +1,120 @@
+<div class="main">
+  <nav class="navbar nav-st">
+    <div class="container-fluid">
+      <p class="navbar-brand">Bloggle</p>
+      <button
+        class="btn btn-outline-success register"
+        routerLink="/login"
+        type="submit"
+      >
+        Login
+      </button>
+    </div>
+  </nav>
+  <div class="body d-flex m-5 justify-content-around">
+    <img
+      src="https://images.unsplash.com/photo-1471666875520-c75081f42081?q=80&w=1572&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt=""
+    />
+    <div class="form">
+      <h2>Register to Blog App</h2>
+      <form [formGroup]="signupForm" (ngSubmit)="submitForm()">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name: </label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            formControlName="username"
+            appHighlight
+          />
+          <div
+            *ngIf="
+              signupForm.get('username')?.invalid &&
+              (signupForm.get('username')?.touched || signupForm.get('username')?.dirty)">
+              <small class="text-danger" *ngIf="signupForm.get('username')?.errors?.['required']">Enter a username</small>  
+              <small class="text-danger" *ngIf="signupForm.get('username')?.errors?.['minlength']">Min. length should be 3</small>  
+            </div>
+          </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email: </label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            formControlName="email"
+            appHighlight
+          />
+          <div
+            *ngIf="
+              signupForm.get('email')?.invalid &&
+              (signupForm.get('email')?.touched ||
+                signupForm.get('email')?.dirty)
+            "
+          >
+            <small class="text-danger" *ngIf="signupForm.get('email')?.errors?.['required']"
+              >Email is required</small
+            >
+            <small class="text-danger" *ngIf="signupForm.get('email')?.errors?.['email']"
+              >Invalid email format</small
+            >
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password: </label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            formControlName="password"
+            appHighlight
+          />
+          <div
+            *ngIf="
+              signupForm.get('password')?.invalid &&
+              (signupForm.get('password')?.touched ||
+                signupForm.get('password')?.dirty)
+            "
+          >
+            <small class="text-danger" *ngIf="signupForm.get('password')?.errors?.['required']"
+              >Enter a password</small
+            >
+            <small class="text-danger" *ngIf="signupForm.get('password')?.errors?.['minlength']"
+              >Min. Length should be 8</small
+            >
+            <small class="text-danger"
+              *ngIf="signupForm.get('password')?.errors?.['invalidPassword']"
+              >Password must contain at least 1 uppercase, 1 lowercase, 1
+              special char, and 1 number </small
+            >
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="cnfPassword" class="form-label">Confirm Password: </label>
+          <input
+            type="password"
+            class="form-control"
+            id="cnfPassword"
+            formControlName="cnfPassword"
+            appHighlight
+          />
+          <div
+            *ngIf="
+              signupForm.get('cnfPassword')?.invalid &&
+              (signupForm.get('cnfPassword')?.touched ||
+                signupForm.get('cnfPassword')?.dirty)
+            "
+          >
+          <small class="text-danger" *ngIf="signupForm.get('cnfPassword')?.errors?.['required']"
+              >Enter a password</small
+            >
+        </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+      </form>
+      <p>
+        Already have an account ? <a routerLink="/login">click here to login</a>
+      </p>
+    </div>
+  </div>
+</div>

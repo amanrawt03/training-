@@ -1,0 +1,120 @@
+org: amanrawat
+service: sls
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: ap-south-1
+  stage: dev
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Scan
+        - dynamodb:PutItem
+        - dynamodb:GetItem
+        - dynamodb:DeleteItem
+        - dynamodb:UpdateItem
+        - dynamodb:Query
+      Resource: arn:aws:dynamodb:ap-south-1:585768182535:table/*
+
+functions:
+  getAllBlogs:
+    handler: getAllBlogs.handler
+    events:
+      - httpApi:
+          path: /blog
+          method: get
+
+  createBlog:
+    handler: createBlog.handler
+    events:
+      - httpApi:
+          path: /blog
+          method: post
+
+  updateBlog:
+    handler: updateBlog.handler
+    events:
+      - httpApi:
+          path: /blog
+          method: put
+
+  deleteBlog:
+    handler: deleteBlog.handler
+    events:
+      - httpApi:
+          path: /blog/{_id}
+          method: delete
+
+  getBlogById:
+    handler: getBlogById.handler
+    events:
+      - httpApi:
+          path: /blog/{_id}
+          method: get
+
+  getMyBlogs:
+    handler: getMyBlogs.handler
+    events:
+      - httpApi:
+          path: /blog/author/{author}
+          method: get
+
+  login:
+    handler: login.handler
+    events:
+      - httpApi:
+          path: /auth/login
+          method: post
+
+  signup:
+    handler: signup.handler
+    events:
+      - httpApi:
+          path: /auth/signup
+          method: post
+
+  getAllComments:
+    handler: getAllComments.handler
+    events:
+      - httpApi:
+          path: /comment/{_id}
+          method: get
+
+  addComment:
+    handler: addComment.handler
+    events:
+      - httpApi:
+          path: /comment
+          method: post
+
+  addReply:
+    handler: addReply.handler
+    events:
+      - httpApi:
+          path: /comment/reply
+          method: put
+
+  toggleAdmin:
+    handler: toggleAdmin.handler
+    events:
+      - httpApi:
+          path: /admin/toggleAdmin/{id}
+          method: put
+
+  toggleBlogApproval:
+    handler: toggleApproval.handler
+    events:
+      - httpApi:
+          path: /admin/approveBlog/{id}
+          method: put
+
+  getAllUsers:
+    handler: getAllUsers.handler
+    events:
+      - httpApi:
+          path: /admin
+          method: get
+
+  
+  

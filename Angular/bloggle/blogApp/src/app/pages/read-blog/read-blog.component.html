@@ -1,0 +1,48 @@
+<div *ngIf="blog; else loading">
+  <!-- Blog Header -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="text-primary">{{ blog.title }}</h2>
+    <button class="btn btn-outline-secondary" (click)="goBack()">
+      Go back
+    </button>
+  </div>
+
+  <!-- Blog Content Card -->
+  <div class="card mb-4 shadow-sm">
+    <div class="card-body">
+      <div class="blog-content" [innerHTML]="blog.content"></div>
+    </div>
+  </div>
+
+  <!-- Comments Section -->
+  <div class="commentContainer">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2>Comments</h2>
+      <!-- Trigger Button for Modal -->
+      <button class="btn btn-primary" (click)="openCommentModal()">Add a comment</button>
+    </div>
+
+    <!-- Displaying all comments -->
+    <div class="allComments" *ngFor="let comment of comments">
+      <div class="comment mb-3 p-3 border rounded shadow-sm">
+        <p class="comment-author font-weight-bold">{{ comment.username }}</p>
+        <p class="comment-date text-muted">{{ comment.createdAt | date: 'dd/MM/yyyy HH:mm' }}</p>
+        <p class="comment-text">{{ comment.comment }}</p>
+        
+        <!-- Reply section -->
+        <div class="replyContainer pl-4" *ngIf="comment.reply !== null">
+          <p class="comment-text"><strong>Reply:</strong> {{ comment.reply.replyContent }}</p>
+          <p class="comment-author text-muted"><strong>By:</strong> {{ comment.reply.username }}</p>
+        </div>
+        
+        <!-- Reply Button -->
+        <button class="btn btn-outline-primary" *ngIf="comment.reply === null">Reply</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Loading Template --> 
+<ng-template #loading>
+  <p>Loading...</p>
+</ng-template>
